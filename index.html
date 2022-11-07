@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>VozIp</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="bg-slate-600 hover:bg-slate-500 w-full text-center p-3">
+    <p class="font-semibold text-white text-2xl ">Redes 3 - VozIp</p>
+  </div>
+
+  <div id="container mx-auto" class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="bg-blue-100 border-t-4 border-blue-500 rounded-b text-blue-900 px-4 py-3 shadow-md" role="alert">
+      <div class="flex">
+        <div class="py-1"><svg class="fill-current h-6 w-6 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20">
+            <path
+              d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+          </svg></div>
+        <div>
+          <p class="font-bold">Felicidades</p>
+          <p class="text-sm"> Este proyecto VozIp ha sido desarrollado por <small class="font-bold text-md"> Oliver
+              Torres</small> y <small class="font-bold text-md"> Ricardo Colina</small> bajo la tutela del mejor
+            profesor de redes 3 del mundo mundial</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto mx-3">
+    <form id="join-form" class="py-5 flex justify-center">
+      <div class=" join-info-group" hidden>
+        <div class="col-sm">
+          <p class="join-info-text">AppID</p>
+          <input id="appid" type="text" placeholder="enter appid" required>
+          <p class="tips">If you don`t know what is your appid, checkout <a
+              href="https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id">this</a>
+          </p>
+        </div>
+        <div class="col-sm">
+          <p class="join-info-text">Token(optional)</p>
+          <input id="token" type="text" placeholder="enter token">
+          <p class="tips">If you don`t know what is your token, checkout <a
+              href="https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key">this</a>
+          </p>
+        </div>
+        <div class="col-sm">
+          <p class="join-info-text">Channel</p>
+          <input id="channel" type="text" placeholder="enter channel name" required>
+          <p class="tips">If you don`t know what is your channel, checkout <a
+              href="https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel">this</a></p>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button id="join" type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">Iniciar Video</button>
+        <button id="leave" type="button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          disabled>Cerrar Video</button>
+      </div>
+    </form>
+    <div class="grid md:flex justify-center gap-1 pb-8 rounded-lg">
+      <div>
+        <p id="local-player-name" class="player-name text-2xl font-bold text-slate-500"></p>
+        <div id="local-player" class="player"></div>
+      </div>
+      <div class=" text-2xl font-bold text-slate-500">
+        <div id="remote-playerlist"></div>
+      </div>
+    </div>
+
+    <script src="./vendor/jquery-3.4.1.min.js"></script>
+    <!-- <script src="./vendor/bootstrap.bundle.min.js"></script> -->
+    <script src="./AgoraRTC_N-4.14.2.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
