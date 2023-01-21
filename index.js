@@ -1,6 +1,8 @@
 // create Agora client
 var client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
 
+
+join()
 var localTracks = {
   videoTrack: null,
   audioTrack: null
@@ -71,7 +73,7 @@ async function join() {
   
   // play local video track
   localTracks.videoTrack.play("local-player");
-  $("#local-player-name").text(`Video Local(${options.uid})`);
+  $("#local-player-name").text(`Alfonzo`);
 
   // publish local tracks to channel
   await client.publish(Object.values(localTracks));
@@ -111,7 +113,7 @@ async function subscribe(user, mediaType) {
   if (mediaType === 'video') {
     const player = $(`
       <div id="player-wrapper-${uid}">
-        <p class="player-name">UsuarioRemoto(${uid})</p>
+        <p class="player-name">Arturo</p>
         <div id="player-${uid}" class="player"></div>
       </div>
     `);
